@@ -77,8 +77,11 @@ WSGI_APPLICATION = 'localcardealer.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'localcardealer_db',
+        'USER': 'postgres',
+        'PASSWORD': 'arajbhai',
+        'HOST': 'localhost',
     }
 }
 
@@ -122,6 +125,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS =[
     os.path.join(BASE_DIR, 'localcardealer/static'),
 ]
+
+# media settings
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
